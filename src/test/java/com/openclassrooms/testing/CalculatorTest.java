@@ -44,6 +44,7 @@ public class CalculatorTest {
 		startedAt = Instant.now();
 	}
 
+	
 	@AfterAll
 	public static void showTestDuration() {
 		System.out.println("Appel après tous les tests");
@@ -63,7 +64,7 @@ public class CalculatorTest {
 
 		// Assert
 		assertThat(somme).isEqualTo(5);
-		assertEquals(5, somme);
+		//assertEquals(5, somme);
 	}
 
 	@Test
@@ -76,7 +77,8 @@ public class CalculatorTest {
 		int produit = calculatorUnderTest.multiply(a, b);
 
 		// Assert
-		assertEquals(462, produit);
+		//assertEquals(462, produit);
+		assertThat(produit).isEqualTo(462);
 	}
 
 	@ParameterizedTest(name = "{0} x 0 doit être égal à 0")

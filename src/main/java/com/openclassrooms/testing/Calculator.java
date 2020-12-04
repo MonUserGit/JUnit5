@@ -13,6 +13,14 @@ public class Calculator {
 		return a * b;
 	}
 
+	public double add(double a, double b) {
+		return a + b;
+	}
+
+	public double multiply(double a, double b) {
+		return a * b;
+	}
+	
 	public void longCalculation() {
 		try {
 			Thread.sleep(500);
@@ -27,9 +35,16 @@ public class Calculator {
 
 		for (int i = 0; i < numberString.length(); i++) {
 			if (numberString.charAt(i) != '-') {
-				integers.add(Integer.parseInt(numberString, i, i + 1, 10));
+				integers.add(Integer.parseInt(numberString.substring(i, i + 1), 10));
 			}
 		}
+		
+		String msgDebug = integers.getClass().getSimpleName() + ": ";
+		for (Integer thisIngeters : integers) {
+			msgDebug = msgDebug + thisIngeters.toString() + "/" ;
+		}
+		System.out.println(msgDebug);
+		
 		return integers;
 	}
 
